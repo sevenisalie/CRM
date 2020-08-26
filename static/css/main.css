@@ -1,0 +1,51 @@
+#logo{
+}
+
+body {
+  background-color: #EDEDED;
+}
+
+.card-header h1, h5 {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+#container-css{
+  padding: 2px 16px;
+}
+#cardheader-css{
+  text-align: center;
+  background-color: #4C7598;
+  color: #AAC3D9;
+}
+
+#total-orders{
+  background-color: #979696;
+}
+
+
+#orders-delivered{
+  background-color: #979696;
+}
+
+#orders-pending{
+  background-color: #979696;
+}
+
+#create-order{
+  background-color: #4C7598;
+}
+
+#create-customer{
+  background-color: #4C7598;
+  text-align: center;
+}

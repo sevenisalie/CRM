@@ -1,0 +1,39 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content%}
+<div class="card" style="width: device-width">
+  <div class="card-header text-center">
+    <h4> New Orders </h4>
+    <form action="" method="POST"> {% csrf_token %}
+
+
+
+        {% for form in formset %}
+        {{ formset.management_form}}
+
+        <br>
+        <hr>
+        <br>
+        <br>
+        <div class="form-group">
+        <p class="card-text text-center">{{form}}</p>
+        </div>
+        {% endfor %}
+
+
+
+
+
+
+
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Add Orders</button>
+
+    </form>
+</div>
+
+
+
+
+{% endblock %}

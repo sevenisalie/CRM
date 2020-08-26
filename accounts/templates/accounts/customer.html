@@ -1,0 +1,92 @@
+{% extends 'accounts/main.html' %}
+{% load static % }
+
+
+{% block content %}
+<br>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'updatecustomer' customer.id %}">Update Customer</a>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'createorder' customer.id%}">Create Order</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p> <a href = ''> {{customer.name}} </a> </p>
+			<p> <a href = ''> {{customer.email}} </a> </p>
+			<p> <a href = ''> {{customer.phone}} </a> </p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Total Orders</h5>
+			<hr>
+			<h5> {{total_orders}} </h5>
+			<h1 style="text-align: center;padding: 10px"></h1>
+		</div>
+	</div>
+</div>
+
+
+<br>
+<div class="row">
+	<div class="col">
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Show Filter Options</button>
+		<div class="collapse" id="collapseExample">
+		<div class="card card-body">
+
+			<form  method="get">
+				{{ orderFilter.form.as_p }}
+				<hr>
+
+		    <button class="btn btn-primary" type="submit">Filter</button>
+		  </form>
+
+		</div>
+		</div>
+	</div>
+
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Note</th>
+					<th>Date</th>
+					<th>Status</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+			<tr>
+				{% for order in orders %}
+					<th>{{ order.product.name}}</th>
+					<th>{{ order.note }}</th>
+					<th>{{ order.date_created}}</th>
+					<th>{{ order.status}}</th>
+					<th> <a href="{% url 'updateorder' order.id %}", name='customer_remove'>Update</a> </th>
+					<th> <a href="{% url 'deleteorder' order.id %}", name="customer_remove">Remove</a> </th>
+
+
+
+			</tr>
+				{% endfor %}
+
+
+			</table>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

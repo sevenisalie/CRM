@@ -1,0 +1,34 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content%}
+<div class="card" style="width: device-width">
+  <div class="card-header text-center">
+    <h2> Update Existing Order </h2>
+    <form action="" method="POST"> {% csrf_token %}
+
+
+
+
+        <br>
+        <hr>
+        <br>
+        <br>
+        <table class="table text-center">
+          <tr>{{form}}</tr>
+        </table>
+
+
+
+
+
+
+
+
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Save Changes</button>
+
+    </form>
+</div>
+
+{% endblock %}
